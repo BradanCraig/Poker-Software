@@ -1,0 +1,43 @@
+
+.container {
+    maxWidth: "600px";
+    margin: "20px auto";
+    fontFamily: "Arial, sans-serif";
+}
+
+.list {
+    display: "flex";
+    flexDirection: "column";
+    gap: "12px";
+}
+
+.card {
+    padding: "10px 15px";
+    borderRadius: "8px";
+    boxShadow: "0 2px 4px rgba(0,0,0,0.1)";
+    display: "flex";
+    flexDirection: "column";
+    justifyContent: "space-between";
+}
+
+.row {
+    display: "flex";
+    justifyContent: "space-between";
+    alignItems: "center";
+}
+
+.date {
+    fontSize: "0.9rem";
+    color: "#555";
+}
+
+.amount {
+    fontSize: "1.1rem";
+    fontWeight: "bold";
+}
+
+.group {
+    marginTop: "5px";
+    fontSize: "0.85rem";
+    color: "#333";
+}

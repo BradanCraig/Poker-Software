@@ -21,7 +21,7 @@ function Login() {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (data.result) {
         const user = { user: username };
         login(user); // Update auth state
         console.log(user);
@@ -29,7 +29,7 @@ function Login() {
         localStorage.setItem('currentUser', username); // Save user locally
 
         // Navigate to redirect path or default to /profile
-        navigate(data.redirect || '/profile');
+        navigate(data.redirect || '/home');
       } else {
         alert(data.message || 'Login failed');
       }
