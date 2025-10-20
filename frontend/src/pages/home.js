@@ -6,6 +6,7 @@ function Home(){
     const [gameStatus, setGame] = useState('No Active Games');
     const [activeState, setGameState] = useState('Loading')
     const [pastGames, setPastGames] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
         async function fetchGameStatus() {
         try {
@@ -40,6 +41,14 @@ function Home(){
 
     return (
 <div className="transactions-container">
+    <div className='profile-icon-div'>
+        <img
+        src="/static/profile-icon.jpg" // path to your icon
+        alt="Profile"
+        className="profile-icon"
+        onClick={() => navigate("/profile")}
+      />
+    </div>
       <h2>Past Transactions</h2>
       {pastGames.length === 0 ? (
         <p>No transactions yet.</p>

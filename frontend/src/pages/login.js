@@ -13,26 +13,25 @@ function Login() {
   const handleLogin = async (e) => {
     if (e) e.preventDefault(); // Prevent default form submission
     try {
+      
       const response = await fetch('http://127.0.0.1:5000/authenticate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({ username, password }),
       });
-
+      
       const data = await response.json();
-
       if (data.result) {
         const user = { user: username };
         login(user); // Update auth state
-        console.log(user);
-
-        localStorage.setItem('currentUser', username); // Save user locally
-
-        // Navigate to redirect path or default to /profile
         navigate(data.redirect || '/home');
-      } else {
+      } 
+      
+      else {
         alert(data.message || 'Login failed');
       }
+
     } catch (error) {
       console.error('Login error:', error);
       alert('Something went wrong');
